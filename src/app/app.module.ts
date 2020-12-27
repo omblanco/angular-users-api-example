@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MongoUsersComponent } from './components/mongo-users/mongo-users.component';
+import { MysqlUsersComponent } from './components/mysql-users/mysql-users.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MongoUsersComponent,
+    MysqlUsersComponent
   ],
   imports: [
     BrowserModule,
