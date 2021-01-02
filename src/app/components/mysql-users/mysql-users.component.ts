@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { MysqlUserService } from 'src/app/services/mysql-user.service';
 
 @Component({
   selector: 'app-mysql-users',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MysqlUsersComponent implements OnInit {
 
-  constructor() { }
+  titulo: string = 'Listado de usuarios de MySQL';
+  users: User[];
+
+  constructor(private service: MysqlUserService) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe(users => this.users = users);
   }
 
 }
